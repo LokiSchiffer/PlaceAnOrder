@@ -2,11 +2,11 @@ package org.example.PlaceAnOrder;
 
 import org.example.PlaceAnOrder.States.*;
 
-public class Process {
+public class ShoppingProcess {
 
     private ProcessState currentState;
 
-    public Process() {
+    public ShoppingProcess() {
         currentState = new ReserveFunds();
     }
 
