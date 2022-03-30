@@ -9,6 +9,7 @@ public class UpdateInventory implements ProcessState {
     private Inventory inventory;
 
     public UpdateInventory(User user, Inventory inventory) {
+        this.user = user;
         this.inventory = inventory;
     }
 
