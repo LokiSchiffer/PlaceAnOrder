@@ -33,7 +33,7 @@ public class ShoppingProcess {
         processed();
     }
 
-    public void processed() {
+    private void processed() {
         currentState = currentState.next();
     }
 }
