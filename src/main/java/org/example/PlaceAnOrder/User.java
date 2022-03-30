@@ -21,14 +21,20 @@ public class User {
         return totalFunds-reservedFunds;
     }
 
-    public void setReservedFunds(double reservedFunds) {
-        if (reservedFunds <= 0)
+    public boolean setReservedFunds(double reservedFunds) {
+        if (reservedFunds <= 0) {
             System.out.println("Value not accepted, it should" +
                     " be greater than 0");
-        else if (reservedFunds < totalFunds)
+            return  false;
+        }
+        else if (reservedFunds < totalFunds) {
             this.reservedFunds = reservedFunds;
-        else
+            return true;
+        }
+        else {
             System.out.println("Not enough funds");
+            return false;
+        }
     }
 
     public void debit() {

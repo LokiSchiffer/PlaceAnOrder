@@ -13,6 +13,23 @@ public class ReserveFunds implements ProcessState {
         this.inventory = inventory;
     }
 
+    public boolean checkCard() {
+        int cardNumber = user.getCreditCardNumber();
+        if (cardNumber == 4000) {
+            System.out.println("Credit card number not valid");
+            return false;
+        } else if (cardNumber < 4111 || cardNumber > 4222) {
+            System.out.println("Credit card number out of bounds");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean checkAmount(double amount) {
+        user.setReservedFunds(amount);
+        return user.getAvailableFunds() > 0;
+    }
+
     @Override
     public ProcessState next() {
         return new UpdateInventory(inventory);
