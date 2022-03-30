@@ -27,13 +27,13 @@ public class User {
                     " be greater than 0");
             return  false;
         }
-        else if (reservedFunds < totalFunds) {
-            this.reservedFunds = reservedFunds;
-            return true;
-        }
-        else {
+        else if (reservedFunds > totalFunds) {
             System.out.println("Not enough funds");
             return false;
+        }
+        else {
+            this.reservedFunds = reservedFunds;
+            return true;
         }
     }
 
