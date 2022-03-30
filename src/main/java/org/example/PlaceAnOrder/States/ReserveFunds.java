@@ -29,7 +29,7 @@ public class ReserveFunds implements ProcessState {
         if(user.setReservedFunds(amount)){
             System.out.println("Problem with checking, " +
                     "process aborted");
-            return false;
+            return false; 
         }
         return user.getAvailableFunds() > 0;
     }
