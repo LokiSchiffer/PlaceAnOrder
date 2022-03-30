@@ -20,10 +20,13 @@ public class Inventory {
         return productQuantity;
     }
 
-    public void setProductQuantity(int productQuantity) {
-        if (productQuantity <= 0)
+    public boolean setProductQuantity(int productQuantity) {
+        if (productQuantity <= 0) {
             System.out.println("Quantity not accepted, it should" +
                     " be greater than 0");
+            return false;
+        }
         this.productQuantity -= productQuantity;
+        return true;
     }
 }
