@@ -13,6 +13,10 @@ public class ShoppingProcess {
         this.inventory = inventory;
     }
 
+    public ProcessState getCurrentState() {
+        return currentState;
+    }
+
     public void startProcess(){
         currentState = new ReserveFunds(user, inventory);
     }
