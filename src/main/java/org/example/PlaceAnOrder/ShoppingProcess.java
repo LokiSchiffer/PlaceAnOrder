@@ -5,9 +5,16 @@ import org.example.PlaceAnOrder.States.*;
 public class ShoppingProcess {
 
     private ProcessState currentState;
+    private User user;
+    private Inventory inventory;
 
-    public ShoppingProcess() {
-        currentState = new ReserveFunds();
+    public ShoppingProcess(User user, Inventory inventory) {
+        this.user = user;
+        this.inventory = inventory;
+    }
+
+    public void startProcess(){
+        currentState = new ReserveFunds(user, inventory);
     }
 
     public void reservedFunds() {
